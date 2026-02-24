@@ -1,0 +1,10 @@
+.timeline-event p{
+    text-align: left;
+    line-height: 1.6;
+    max-width: 15cm;
+}
+
+.event-date {
+    font-size: 1.5em;
+    font-weight: bold;
+}
