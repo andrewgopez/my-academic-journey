@@ -12,7 +12,8 @@ body {
 
 h1{
     text-align: center;
-    margin-bottom: 3rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .timeline {
@@ -21,7 +22,7 @@ h1{
     position: relative;
     max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 1rem;
 }
 
 .timeline-event {
