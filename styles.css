@@ -1,3 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 2rem 1.5rem;
+    line-height: 1.6;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.timeline-event {
+    width: 90%; 
+    max-width: 15cm; 
+    padding: 1rem;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-event.left{
+    align-self: flex-start;
+    margin-left: 0;
+}
+
+.timeline-event.right{
+    align-self: flex-end;
+    margin-right: 0;
+}
+
 .timeline-event p{
     text-align: left;
     line-height: 1.6;
