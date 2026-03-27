@@ -14,7 +14,7 @@ Each event includes:
 The timeline **visually** shows my journey, highlighting challenges, successes, and key moments  of my time in CEGEP. I hope this timeline inspires others to embrace failure as a step toward growth.
 
 ## Acknowledgements
-Special thanks to my teachers and classmates who supported throughout my CEGEP journey. 
+Special thanks to my teachers and classmates who supported me throughout my CEGEP journey. 
 
 ## Audience Engagement
 - Take a moment to reflect on your own milestones.  
