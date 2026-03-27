@@ -16,6 +16,14 @@ h1{
     margin-bottom: 1rem;
 }
 
+.intro{
+    max-width: 16cm;
+    margin: 0 auto 1.5rem auto;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1.1em;
+}
+
 .timeline {
     display: flex;
     flex-direction: column;
