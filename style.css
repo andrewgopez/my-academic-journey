@@ -64,11 +64,18 @@ h1{
     max-width: 15cm;
 }
 
-.timeline-event:hover{
+.timeline-event.left:hover{
    transform: translateY(-2px);
    background-color: #fff9e6;
    border-left: 5px solid #ffb142;
    transition: all 0.25s ease;
+}
+
+.timeline-event.right:hover {
+    transform: translateY(-2px);
+    background-color: #e6f7ff;
+    border-left: 5px solid #00a8cc;
+    transition: all 0.25s ease;
 }
 
 .event-date {
