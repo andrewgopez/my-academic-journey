@@ -44,6 +44,7 @@ h1{
     margin-bottom: 3rem;
     border-left: 5px solid #5a4db2;
     padding-left: 2rem;
+    cursor: pointer;
 }
 
 .timeline-event.left{
