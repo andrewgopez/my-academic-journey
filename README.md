@@ -31,4 +31,5 @@ Special thanks to my teachers and classmates who supported me throughout my CEGE
 3. Scroll through or click events to explore the timeline.
 
 **Live Demo:** [View the Timeline](https://andrewgopez.github.io/my-academic-journey/)
+<br>
 _**Tip:**_ Right-click the link and select "Open link in new tab" to keep this README open
