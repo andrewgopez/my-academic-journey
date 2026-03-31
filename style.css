@@ -111,3 +111,54 @@ h1{
     border-top: 1px solid #ddd;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.dark-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    background-color: #f0f0f0; 
+    color: #1e1e1e; 
+    font-size: 1.2rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.dark-mode .dark-button{
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.3);
+}
+
+.dark-button:hover{
+    transform: scale(1.05);
+}
+
+body.dark-mode {
+    background-color: #121212; 
+    color: #f0f0f0; 
+}
+
+body.dark-mode .timeline-event.left {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .timeline-event.right{
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .timeline-event.left:hover, body.dark-mode .timeline-event.right:hover{
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .hover-note{
+    color: #fff;
+}
+
+.dark-mode .timeline-footer{
+    color: #fff;
+}
