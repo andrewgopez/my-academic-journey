@@ -1,4 +1,4 @@
-const darkModeToggle = document.getElementById("darkModeToggle");
+// For dark button toggle:
 
 document.addEventListener("DOMContentLoaded", () => {
     const darkModeToggle = document.getElementById("darkModeToggle");
@@ -14,5 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
             darkModeToggle.textContent = "🌙"; 
         }
     });
+    }
+});
+
+// For 'Back to the top' toggle:
+document.addEventListener("DOMContentLoaded", () =>{
+    const backButton = document.getElementById("backToTop");
+    if(backButton)
+    {
+        backButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+     });
     }
 });
