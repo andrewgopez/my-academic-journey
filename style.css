@@ -189,24 +189,34 @@ body.dark-mode .timeline-event.left:hover, body.dark-mode .timeline-event.right:
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Light Mode: */
-#darkModeToggle, .back-button{
-    background-color: #5a5f6b;
+/* Light mode */
+#darkModeToggle {
+    background-color: #f9f9f9;
+    color: #1e1e1e;
 }
 
-/* Dark Mode:*/
-body.dark-mode #darkModeToggle, body.dark-mode .back-button{
-    background-color: #d1d5db;
-    color: #000;
+/* Dark mode */
+body.dark-mode #darkModeToggle {
+    background-color: #121212;
+    color: #f0f0f0;
 }
 
-body.dark-mode .back-button{
-    background-color: #d1d5db;
-    color: #000;
+#darkModeToggle, .back-button {
+    background-color: inherit;
+    color: inherit;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-body.dark-mode .back-button:hover{
-    transition: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.8);
+body.dark-mode #darkModeToggle, body.dark-mode .back-button{
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.2);
+}
+
+#darkModeToggle:hover, .back-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode #darkModeToggle:hover, body.dark-mode .back-button:hover {
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.4);
 }
