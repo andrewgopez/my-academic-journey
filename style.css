@@ -165,7 +165,7 @@ body.dark-mode .timeline-event.left:hover, body.dark-mode .timeline-event.right:
 
 .back-button {
     position: absolute;
-    bottom: 20px;
+    bottom: -10px;
     left: 50%;
     right: 20px;
     padding:4px 6px;
