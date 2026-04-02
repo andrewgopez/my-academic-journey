@@ -14,13 +14,51 @@
     <button id="darkModeToggle" title="Switch theme" class="dark-button">🌙</button>
 
     <!--A mini blurb before the timeline-->
-    <p class="intro">
-        This timeline shows my journey through CEGEP, from when I first got
-        interested in technology to finding a path that fits me better. It 
-        includes the challenges I faced along the way and how I grew from 
-        them. Overall, it reflects how I came to better understand my 
-        strengths and where I see myself going.
-    </p>
+    <section class="intro">
+        <p>
+            This timeline shows my journey through CEGEP, from when I first got
+            interested in technology to finding a path that fits me better. It 
+            includes the challenges I faced along the way and how I grew from 
+            them. Overall, it reflects how I came to better understand my 
+            strengths and where I see myself going.
+        </p>
+        
+        <br>
+        <p>
+            Before diving into the timeline, I found this short video that captures
+            the idea of learning from failure and overcoming it—something I experiened
+            personally.
+        </p>
+
+        <div class="video-container">
+            <iframe
+                id="myVideo"
+                src="https://www.youtube.com/embed/DsHudsFCico?loop=1&playlist=DsHudsFCico&controls=1&modestbranding=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <style>
+            .video-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%;
+                height: 0;
+            }
+
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </section>
 
     <p class="hover-note"> ✨ <strong>Tip:</strong> Hover over each event to explore</p>
 
