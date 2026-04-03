@@ -1,9 +1,11 @@
+/* Reset default styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Style the main page */
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 2rem 1.5rem;
@@ -11,12 +13,14 @@ body {
     background-color: #f9f9f9;
 }
 
+/* Style and format the h1 tag (the title) */
 h1{
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
+/* Style the intro text block */
 .intro{
     max-width: 16cm;
     margin: 0 auto 1.5rem auto;
@@ -25,6 +29,7 @@ h1{
     font-size: 1.1em;
 }
 
+/* Timeline container layout*/
 .timeline {
     display: flex;
     flex-direction: column;
@@ -34,6 +39,7 @@ h1{
     padding: 1rem;
 }
 
+/* Base styling for timeline events */
 .timeline-event {
     width: 90%; 
     max-width: 15cm; 
@@ -47,24 +53,28 @@ h1{
     cursor: pointer;
 }
 
+/* Left-aligned timeline events */
 .timeline-event.left{
     align-self: flex-start;
     margin-left: 0;
     background-color: #fff3e0;
 }
 
+/* Right-aligned timeline events */
 .timeline-event.right{
     align-self: flex-end;
     margin-right: 0;
     background-color: #e0f7fa;
 }
 
+/* Paragraph styling inside timeline events */
 .timeline-event p{
     text-align: left;
     line-height: 1.6;
     max-width: 15cm;
 }
 
+/* Hover note text (the text above timeline) */
 .hover-note{
     text-align: center;
     font-size: 0.9rem;
@@ -74,27 +84,32 @@ h1{
     padding: 0.2rem 0;
 }
 
+/* Hover effect for all timeline events */
 .timeline-event:hover{
     transform: translateY(-2px) scale(1.02);
     transition: all 0.25s ease;
     box-shadow: 0 4px 8px rgb(0,0,0,0.25);
 }
 
+/* Hover effect for left-aligned events */
 .timeline-event.left:hover{
     background-color: #fff9e6;
     border-left: 5px solid #ffb142;
 }
 
+/* Hover effect for right-aligned events */
 .timeline-event.right:hover {
     background-color: #e6f7ff;
     border-left: 5px solid #00a8cc;
 }
 
+/* Styling for event date */
 .event-date {
     font-size: 1.5em;
     font-weight: bold;
 }
 
+/* Styling for event title */
 .event-title{
     font-size: 1.2em;
     font-weight: bold;
@@ -102,6 +117,7 @@ h1{
     margin-bottom: 0.4em;
 }
 
+/* Footer of the timeline */
 .timeline-footer{
     text-align: center;
     font-size: 0.9rem;
@@ -112,6 +128,7 @@ h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Dark mode toggle button styling */
 .dark-button {
     position: fixed;
     top: 20px;
@@ -127,42 +144,47 @@ h1{
     transition: all 0.3s ease;
 }
 
+/* Appearance of the dark mode button in dark mode */
 .dark-mode .dark-button{
     background-color: #333;
     color: #fff;
     box-shadow: 0 3px 6px rgba(255, 255, 255, 0.3);
 }
 
+/* Dark mode button hover effect */
 .dark-button:hover{
     transform: scale(1.05);
 }
 
+/* Dark mode body background and text color */
 body.dark-mode {
     background-color: #121212; 
     color: #f0f0f0; 
 }
 
-body.dark-mode .timeline-event.left {
+/* Timeline event background in dark mode */
+body.dark-mode .timeline-event.left, 
+body.dark-mode .timeline-event.right {
     background-color: #1e1e1e;
 }
 
-body.dark-mode .timeline-event.right{
-    background-color: #1e1e1e;
-}
-
-body.dark-mode .timeline-event.left:hover, body.dark-mode .timeline-event.right:hover{
+/* Hover effect for timeline events in dark mode */
+body.dark-mode .timeline-event.left:hover, 
+body.dark-mode .timeline-event.right:hover{
     transition: all 0.25s ease;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
 }
-
+/* Hover note text color in dark mode */
 .dark-mode .hover-note{
     color: #fff;
 }
 
+/* Timeline footer color in dark mode */
 .dark-mode .timeline-footer{
     color: #fff;
 }
 
+/* Styling for 'Back to the Top' button */
 .back-button {
     position: absolute;
     bottom: -10px;
@@ -183,24 +205,26 @@ body.dark-mode .timeline-event.left:hover, body.dark-mode .timeline-event.right:
     justify-content: center;
 }
 
+/* Back button hover effect */
 .back-button:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Light mode */
+/* Dark mode toggle button (when in light mode) */
 #darkModeToggle {
     background-color: #f9f9f9;
     color: #1e1e1e;
 }
 
-/* Dark mode */
+/* Dark mode toggle button (when in dark mode) */
 body.dark-mode #darkModeToggle {
     background-color: #121212;
     color: #f0f0f0;
 }
 
+/* Shared styling for dark mode toggle and back button */
 #darkModeToggle, .back-button {
     background-color: inherit;
     color: inherit;
@@ -208,15 +232,19 @@ body.dark-mode #darkModeToggle {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* Shared box shadow in dark mode */
 body.dark-mode #darkModeToggle, body.dark-mode .back-button{
     box-shadow: 0 3px 6px rgba(255, 255, 255, 0.2);
 }
 
+/* Hover effects for both buttons */
 #darkModeToggle:hover, .back-button:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-body.dark-mode #darkModeToggle:hover, body.dark-mode .back-button:hover {
+/* Hover effects in dark mode */
+body.dark-mode #darkModeToggle:hover, 
+body.dark-mode .back-button:hover {
     box-shadow: 0 6px 12px rgba(255, 255, 255, 0.4);
 }
