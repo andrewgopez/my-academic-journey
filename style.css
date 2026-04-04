@@ -29,6 +29,37 @@ h1{
     font-size: 1.1em;
 }
 
+.navbar{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #444;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover{
+    color: #000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .navbar a{
+    color: #ccc;
+}
+
+body.dark-mode .navbar a:hover{
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.4);
+}
+
 /* Timeline container layout*/
 .timeline {
     display: flex;
