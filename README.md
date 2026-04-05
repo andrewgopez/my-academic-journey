@@ -8,6 +8,7 @@ This timeline accompanies my memoir, visually showing my academic journey. It wi
 ## Technologies Used
 - HTML5 to structure the timeline
 - CSS3 for styling and layout
+- JavaScript for button interactivity
 
 Each event includes:  
 - A **date/semester** (e.g., Fall 2022, Winter 2024)  
@@ -15,7 +16,7 @@ Each event includes:
 - A **description**, which can be a longer paragraph reflecting on the experience   
 
 ## Purpose
-The timeline **visually** shows my journey, highlighting challenges, successes, and key moments in my CEGEP journey. I hope this timeline inspires others to embrace failure as a step toward growth.
+The timeline **visually** shows my journey, highlighting challenges, successes, and key moments in my CEGEP journey. Because failure—especially failing a class—is often difficult to admit and overcome, this project aims to show how those experiences can lead to growth. I hope this timeline inspires others to embrace failure as a step toward growth. 
 
 ## Acknowledgements
 Special thanks to my teachers and classmates who supported me throughout my CEGEP journey. 
