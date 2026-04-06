@@ -39,6 +39,10 @@ h1{
     padding: 1rem;
 }
 
+.timeline > .timeline-event:last-child {
+    margin-bottom: 1.5rem;
+}
+
 /* Base styling for timeline events */
 .timeline-event {
     width: 90%; 
