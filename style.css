@@ -186,23 +186,21 @@ body.dark-mode .timeline-event.right:hover{
 
 /* Styling for 'Back to the Top' button */
 .back-button {
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    right: 20px;
-    padding:4px 6px;
-    border-radius:6px;
-    cursor:pointer;
-    font-size:1rem;
-    background-color:#333333;
-    border:none;
-    color:#fff;
-    z-index:1000;
-    width:fit-content;
-    min-width:0;
+    position: relative; /* allows transform if needed, but not removed from flow */
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px auto; /* space above and below, centers horizontally */
+    padding: 4px 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #333333;
+    border: none;
+    color: #fff;
+    width: fit-content;
+    min-width: 0;
+    z-index: 1000;
 }
 
 /* Back button hover effect */
@@ -254,11 +252,9 @@ body.dark-mode .back-button:hover {
     text-align: center;
     font-style: italic;
     color: black;
-    margin: 40px 0 20px 0;
+    margin: 0 auto 20px auto;
     font-size: 1rem;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
     transition: color 0.3s;
 }
 
