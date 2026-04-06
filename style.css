@@ -248,3 +248,28 @@ body.dark-mode #darkModeToggle:hover,
 body.dark-mode .back-button:hover {
     box-shadow: 0 6px 12px rgba(255, 255, 255, 0.4);
 }
+
+/* Styling for the quote text */
+.quote{
+    text-align: center;
+    font-style: italic;
+    color: black;
+    margin: 40px 0 20px 0;
+    font-size: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: color 0.3s;
+}
+
+/* Styling for the quote author */
+.quote .author{
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Quote color in Dark Mode */
+body.dark-mode .quote{
+    color: #ddd;
+}
