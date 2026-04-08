@@ -39,6 +39,7 @@ h1{
     padding: 1rem;
 }
 
+/* Spacing after last timeline event */
 .timeline > .timeline-event:last-child {
     margin-bottom: 1.5rem;
 }
