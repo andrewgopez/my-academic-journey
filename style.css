@@ -216,11 +216,11 @@ body.dark-mode .timeline-event:hover .event-gif {
 
 /* Styling for 'Back to the Top' button */
 .back-button {
-    position: relative; /* allows transform if needed, but not removed from flow */
+    position: relative; 
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px auto; /* space above and below, centers horizontally */
+    margin: 20px auto; 
     padding: 4px 6px;
     border-radius: 6px;
     cursor: pointer;
