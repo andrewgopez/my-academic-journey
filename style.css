@@ -20,6 +20,11 @@ h1{
     margin-bottom: 1rem;
 }
 
+/* Adds spacing between paragraphs for better readability */
+p{
+    margin-bottom: 1rem;
+}
+
 /* Style the intro text block */
 .intro{
     max-width: 16cm;
