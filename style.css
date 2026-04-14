@@ -20,6 +20,13 @@ h1{
     margin-bottom: 1rem;
 }
 
+/* Style and format the h2 tag (the subtitle) */
+h2{
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 /* Adds spacing between paragraphs for better readability */
 p{
     margin-bottom: 1rem;
