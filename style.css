@@ -87,10 +87,48 @@ p{
     max-width: 15cm;
 }
 
+/* Container for the signature hook section (centers everything) */
+.hook-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* The main question line ('Did I quit?') */
+.hook-question {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Styles the <details>/<summary> interactive text */
+.hook-details summary {
+    cursor: pointer;
+    font-style: italic;
+    color: #555;
+    list-style: none;
+}
+
+/* Removes the arrow */
+.hook-details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* The revealed answer ('YES—but not yet!') */
+.hook-answer {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 0.8rem;
+}
+
+/* Hover effect for summary text */
+.hook-details summary:hover {
+    text-decoration: underline;
+}
+
 /* Styling for the GIFs inside timeline events */
 .event-gif {
     display: block;
-    margin: 0.5rem auto;
+    margin: 1.2rem auto 0.5rem auto;
     max-width: 45%;
     height: auto;
     transition: transform 0.4s ease;
@@ -226,6 +264,11 @@ body.dark-mode .timeline-event:hover .event-gif {
     color: #fff;
 }
 
+/* 'Click to find out' in dark mode  */
+body.dark-mode summary {
+    color: #f0f0f0;
+}
+
 /* Styling for 'Back to the Top' button */
 .back-button {
     position: relative; 
@@ -310,4 +353,13 @@ body.dark-mode .back-button:hover {
 /* Quote color in Dark Mode */
 body.dark-mode .quote{
     color: #ddd;
+}
+
+/* Final closing line of the project (before the footer) */
+.closing-hook {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.4;
 }
