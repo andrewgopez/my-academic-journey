@@ -289,6 +289,11 @@ body.dark-mode summary {
     z-index: 1000;
 }
 
+/* Adds spacing between icon and button text */
+.back-button .icon{
+    margin-right: 8px;
+}
+
 /* Back button hover effect */
 .back-button:hover {
     transform: scale(1.05);
