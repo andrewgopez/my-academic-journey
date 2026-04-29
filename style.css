@@ -8,7 +8,7 @@
 /* Style the main page */
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 2rem 1.5rem;
+    padding: 6rem 1.5rem 2rem;
     line-height: 1.6;
     background-color: #f9f9f9;
 }
@@ -54,8 +54,8 @@ p{
 
 /* Base styling for timeline events */
 .timeline-event {
-    width: 90%; 
-    max-width: 15cm; 
+    width: 100%;
+    max-width: 700px;
     padding: 1rem;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -215,6 +215,7 @@ p{
     font-size: 1.2rem;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 /* Appearance of the dark mode button in dark mode */
