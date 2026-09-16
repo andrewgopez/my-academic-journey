@@ -1,372 +1,805 @@
-/* Reset default styles */
+/* =========================================================
+   RESET
+========================================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Style the main page */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 6rem 1.5rem 2rem;
-    line-height: 1.6;
-    background-color: #f9f9f9;
+    padding: 0 1.5rem 2rem;
+    line-height: 1.7;
+    background: #f4f6fb;
+    color: #20232a;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Style and format the h1 tag (the title) */
-h1{
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
 
-/* Style and format the h2 tag (the subtitle) */
-h2{
-    font-size: 1.3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
+/* =========================================================
+   HERO / INTRODUCTION
+========================================================= */
 
-/* Adds spacing between paragraphs for better readability */
-p{
-    margin-bottom: 1rem;
-}
-
-/* Style the intro text block */
-.intro{
-    max-width: 16cm;
-    margin: 0 auto 1.5rem auto;
-    text-align: center;
-    line-height: 1.5;
-    font-size: 1.1em;
-}
-
-/* Timeline container layout*/
-.timeline {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    max-width: 900px;
+.intro-title-wrapper {
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 7rem 1rem 4rem;
+    text-align: center;
 }
 
+.intro-title-wrapper::before {
+    content: "MY CEGEP JOURNEY";
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.25rem;
+    color: #6254c7;
+    margin-bottom: 1rem;
+}
 
-/* Base styling for timeline events */
-.timeline-event {
-    width: 100%;
+.intro-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+
+    background: linear-gradient(135deg, #5548b8, #8a63d2, #2389a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.intro-title-wrapper h2 {
     max-width: 700px;
-    padding: 1rem;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    position: relative;
-    margin-bottom: 3rem;
-    border-left: 5px solid #5a4db2;
-    padding-left: 2rem;
-    cursor: pointer;
+    margin: 0 auto;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-weight: 400;
+    color: #626873;
 }
 
-/* Left-aligned timeline events */
-.timeline-event.left{
+
+/* =========================================================
+   INTRO PARAGRAPH
+========================================================= */
+
+.intro {
+    max-width: 760px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #555b66;
+}
+
+
+/* =========================================================
+   HOVER / SCROLL TIP
+========================================================= */
+
+.hover-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 2rem auto 3rem;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 0 3rem;
+}
+
+
+/* Main vertical line */
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        to bottom,
+        #6254c7,
+        #7b65cf,
+        #2a9db8,
+        #6254c7
+    );
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   TIMELINE EVENTS
+========================================================= */
+
+.timeline-event {
+    width: calc(50% - 55px);
+    max-width: none;
+    position: relative;
+    padding: 1.75rem;
+    margin-bottom: 5rem;
+
+    border: none;
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(30, 40, 70, 0.08),
+        0 2px 8px rgba(30, 40, 70, 0.05);
+
+    cursor: default;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* Timeline dots */
+
+.timeline-event::before {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    width: 18px;
+    height: 18px;
+
+    border: 4px solid #f4f6fb;
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 3px rgba(98, 84, 199, 0.2);
+
+    z-index: 2;
+}
+
+
+/* Left cards */
+
+.timeline-event.left {
     align-self: flex-start;
     margin-left: 0;
-    background-color: #fff3e0;
+    background: linear-gradient(
+        135deg,
+        #fff9ef,
+        #fff3e0
+    );
+    border-top: 5px solid #f2a93b;
 }
 
-/* Right-aligned timeline events */
-.timeline-event.right{
+.timeline-event.left::before {
+    right: -64px;
+    background: #f2a93b;
+}
+
+
+/* Right cards */
+
+.timeline-event.right {
     align-self: flex-end;
     margin-right: 0;
-    background-color: #e0f7fa;
+    margin-left: auto;
+
+    background: linear-gradient(
+        135deg,
+        #effbfc,
+        #e2f6fa
+    );
+
+    border-top: 5px solid #229bb3;
 }
 
-/* Paragraph styling inside timeline events */
-.timeline-event p{
+.timeline-event.right::before {
+    left: -64px;
+    background: #229bb3;
+}
+
+
+/* Hover */
+
+.timeline-event:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 18px 40px rgba(30, 40, 70, 0.14),
+        0 5px 12px rgba(30, 40, 70, 0.08);
+}
+
+
+/* =========================================================
+   EVENT DATE
+========================================================= */
+
+.event-date {
+    display: inline-block;
+
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 0.8rem;
+
+    border-radius: 999px;
+    background: rgba(98, 84, 199, 0.1);
+    color: #5548b8;
+}
+
+
+/* =========================================================
+   EVENT TITLE
+========================================================= */
+
+.event-title {
+    font-size: 1.45rem;
+    line-height: 1.3;
+    font-weight: 700;
+    font-style: normal;
+
+    margin-bottom: 1rem;
+
+    color: #252936;
+}
+
+
+/* =========================================================
+   EVENT TEXT
+========================================================= */
+
+.timeline-event p {
     text-align: left;
-    line-height: 1.6;
-    max-width: 15cm;
+    line-height: 1.75;
+    max-width: none;
+    color: #505661;
 }
 
-/* Container for the signature hook section (centers everything) */
+.timeline-event strong {
+    color: #353944;
+}
+
+
+/* =========================================================
+   GIFS
+========================================================= */
+
+.event-gif {
+    display: block;
+
+    width: auto;
+    max-width: 55%;
+    max-height: 190px;
+
+    object-fit: contain;
+
+    margin: 1.5rem auto 0.25rem;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        filter 0.4s ease;
+}
+
+.timeline-event:hover .event-gif {
+    transform: scale(1.04);
+    filter: brightness(1.04);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   "DID I QUIT?" SECTION
+========================================================= */
+
 .hook-container {
     text-align: center;
-    margin-top: 2rem;
+    margin: 2rem 0 1rem;
+    padding: 1.5rem;
+
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px dashed rgba(98, 84, 199, 0.35);
 }
 
-/* The main question line ('Did I quit?') */
 .hook-question {
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 800;
     margin-bottom: 0.5rem;
 }
 
-/* Styles the <details>/<summary> interactive text */
 .hook-details summary {
     cursor: pointer;
     font-style: italic;
     font-weight: bold;
-    color: #222;
-    list-style: none;
+    color: #6254c7;
+
+    transition: color 0.2s ease;
 }
 
-/* Removes the arrow */
+.hook-details summary:hover {
+    color: #403594;
+    text-decoration: underline;
+}
+
 .hook-details summary::-webkit-details-marker {
     display: none;
 }
 
-/* The revealed answer ('YES—but not yet!') */
 .hook-answer {
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-top: 0.8rem;
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-top: 1rem;
+
+    color: #d85c4a;
 }
 
-/* Hover effect for summary text */
-.hook-details summary:hover {
-    text-decoration: underline;
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote {
+    position: relative;
+
+    max-width: 800px;
+    margin: 2rem auto 1.5rem;
+    padding: 2rem 2.5rem;
+
+    text-align: center;
+    font-style: italic;
+
+    font-size: 1.1rem;
+    line-height: 1.7;
+
+    color: #454b57;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 8px 25px rgba(30, 40, 70, 0.06);
 }
 
-/* Styling for the GIFs inside timeline events */
-.event-gif {
+.quote::before {
+    content: "“";
     display: block;
-    margin: 1.2rem auto 0.5rem auto;
-    max-width: 45%;
-    height: auto;
-    transition: transform 0.4s ease;
+
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    line-height: 0.5;
+
+    color: #6254c7;
+    margin-bottom: 0.75rem;
 }
 
-/* Hover effect for GIFs inside timeline events */
-.timeline-event:hover .event-gif {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
+.quote .author {
+    display: block;
+    margin-top: 0.75rem;
 
-/* Spacing after last timeline event */
-.timeline > .timeline-event:last-child {
-    margin-bottom: 1.5rem;
-}
-
-/* Hover note text (the text above timeline) */
-.hover-note{
-    text-align: center;
-    font-size: 0.9rem;
-    color: #333;
-    margin-bottom: 1rem;
-    font-style: italic;
-    padding: 0.2rem 0;
-}
-
-/* Hover effect for all timeline events */
-.timeline-event:hover{
-    transform: translateY(-2px) scale(1.02);
-    transition: all 0.25s ease;
-    box-shadow: 0 4px 8px rgb(0,0,0,0.25);
-}
-
-/* Hover effect for left-aligned events */
-.timeline-event.left:hover{
-    background-color: #fff9e6;
-    border-left: 5px solid #ffb142;
-}
-
-/* Hover effect for right-aligned events */
-.timeline-event.right:hover {
-    background-color: #e6f7ff;
-    border-left: 5px solid #00a8cc;
-}
-
-/* Styling for event date */
-.event-date {
-    font-size: 1.5em;
+    font-style: normal;
     font-weight: bold;
+
+    color: #6254c7;
 }
 
-/* Styling for event title */
-.event-title{
-    font-size: 1.2em;
-    font-weight: bold;
-    font-style: italic;
-    margin-bottom: 0.4em;
-}
 
-/* Footer of the timeline */
-.timeline-footer{
+/* =========================================================
+   CLOSING STATEMENT
+========================================================= */
+
+.closing-hook {
+    max-width: 750px;
+    margin: 2.5rem auto;
+
+    padding: 2rem;
+
     text-align: center;
-    font-size: 0.9rem;
-    color: #555;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #ddd;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    font-size: clamp(1.25rem, 3vw, 1.7rem);
+    line-height: 1.5;
+
+    font-weight: 800;
+
+    color: #ffffff;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #5548b8,
+        #7562c8,
+        #248fa7
+    );
+
+    box-shadow:
+        0 12px 30px rgba(85, 72, 184, 0.25);
 }
 
-/* Dark mode toggle button styling */
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
 .dark-button {
     position: fixed;
+
     top: 20px;
     right: 20px;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 6px;
-    border: none;
-    background-color: #f0f0f0; 
-    color: #1e1e1e; 
-    font-size: 1.2rem;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
 
-/* Appearance of the dark mode button in dark mode */
-.dark-mode .dark-button{
-    background-color: #333;
-    color: #fff;
-    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.3);
-}
+    width: 46px;
+    height: 46px;
 
-/* Dark mode button hover effect */
-.dark-button:hover{
-    transform: scale(1.05);
-}
-
-/* Dark mode body background and text color */
-body.dark-mode {
-    background-color: #121212; 
-    color: #f0f0f0; 
-}
-
-/* Timeline event background in dark mode */
-body.dark-mode .timeline-event.left, 
-body.dark-mode .timeline-event.right {
-    background-color: #1e1e1e;
-}
-
-/* Hover effect for timeline events in dark mode */
-body.dark-mode .timeline-event.left:hover, 
-body.dark-mode .timeline-event.right:hover{
-    transition: all 0.25s ease;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
-}
-
-/* Dark mode hover effect for GIFs */
-body.dark-mode .timeline-event:hover .event-gif {
-    transform: scale(1.1);
-    filter: brightness(1.4);
-    box-shadow: 0 5px 20px rgba(255,255,255,0.3);
-}
-
-/* Hover note text color in dark mode */
-.dark-mode .hover-note{
-    color: #fff;
-}
-
-/* Timeline footer color in dark mode */
-.dark-mode .timeline-footer{
-    color: #fff;
-}
-
-/* 'Click to find out' in dark mode  */
-body.dark-mode summary {
-    color: #f0f0f0;
-}
-
-/* Styling for 'Back to the Top' button */
-.back-button {
-    position: relative; 
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px auto; 
-    padding: 4px 6px;
-    border-radius: 6px;
+
     cursor: pointer;
-    font-size: 1rem;
-    background-color: #333333;
+
     border: none;
-    color: #fff;
-    width: fit-content;
-    min-width: 0;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+    color: #20232a;
+
+    font-size: 1.15rem;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    
     z-index: 1000;
 }
 
-/* Adds spacing between icon and button text */
-.back-button .icon{
-    margin-right: 8px;
+.dark-button:hover {
+    transform: rotate(12deg) scale(1.08);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Back button hover effect */
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 2.5rem auto 2rem;
+
+    padding: 0.75rem 1.2rem;
+
+    border: none;
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    font-size: 0.95rem;
+
+    background: #252936;
+    color: white;
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.back-button .icon {
+    margin-right: 0.5rem;
+}
+
 .back-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.25);
 }
 
-/* Dark mode toggle button (when in light mode) */
-#darkModeToggle {
-    background-color: #f9f9f9;
-    color: #1e1e1e;
-}
 
-/* Dark mode toggle button (when in dark mode) */
-body.dark-mode #darkModeToggle {
-    background-color: #121212;
-    color: #f0f0f0;
-}
+/* =========================================================
+   FOOTER
+========================================================= */
 
-/* Shared styling for dark mode toggle and back button */
-#darkModeToggle, .back-button {
-    background-color: inherit;
-    color: inherit;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
+.timeline-footer {
+    max-width: 900px;
 
-/* Shared box shadow in dark mode */
-body.dark-mode #darkModeToggle, body.dark-mode .back-button{
-    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.2);
-}
+    margin: 3rem auto 0;
+    padding-top: 1.5rem;
 
-/* Hover effects for both buttons */
-#darkModeToggle:hover, .back-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-}
-
-/* Hover effects in dark mode */
-body.dark-mode #darkModeToggle:hover, 
-body.dark-mode .back-button:hover {
-    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.4);
-}
-
-/* Styling for the quote text */
-.quote{
     text-align: center;
-    font-style: italic;
-    color: black;
-    margin: 0 auto 20px auto;
-    font-size: 1rem;
-    max-width: 600px;
-    transition: color 0.3s;
+
+    font-size: 0.85rem;
+
+    color: #737985;
+
+    border-top: 1px solid #dfe2e8;
 }
 
-/* Styling for the quote author */
-.quote .author{
-    font-style: normal;
-    font-weight: bold;
-    margin-left: 5px;
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+    background:
+        radial-gradient(
+            circle at top,
+            #202436 0%,
+            #11131b 45%,
+            #0c0e13 100%
+        );
+
+    color: #eeeeee;
 }
 
-/* Quote color in Dark Mode */
-body.dark-mode .quote{
-    color: #ddd;
+
+/* Hero */
+
+body.dark-mode .intro-title-wrapper h2 {
+    color: #b8bdc9;
 }
 
-/* Final closing line of the project (before the footer) */
-.closing-hook {
-    text-align: center;
-    font-weight: bold;
-    margin-top: 1rem;
-    font-size: 1.05rem;
-    line-height: 1.4;
+body.dark-mode .intro {
+    color: #b8bdc9;
+}
+
+body.dark-mode .hover-note {
+    color: #9da3b1;
+}
+
+
+/* Timeline */
+
+body.dark-mode .timeline::before {
+    background: linear-gradient(
+        to bottom,
+        #8173e0,
+        #5caabd,
+        #8173e0
+    );
+}
+
+body.dark-mode .timeline-event.left,
+body.dark-mode .timeline-event.right {
+    background: #1a1d27;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .timeline-event.left {
+    border-top-color: #e5a94d;
+}
+
+body.dark-mode .timeline-event.right {
+    border-top-color: #4cb1c7;
+}
+
+body.dark-mode .timeline-event::before {
+    border-color: #11131b;
+}
+
+body.dark-mode .event-title {
+    color: #f3f4f6;
+}
+
+body.dark-mode .timeline-event p {
+    color: #c3c7d0;
+}
+
+body.dark-mode .timeline-event strong {
+    color: #ffffff;
+}
+
+body.dark-mode .event-date {
+    background: rgba(129, 115, 224, 0.18);
+    color: #b8afff;
+}
+
+
+/* Hook */
+
+body.dark-mode .hook-container {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(150, 140, 255, 0.3);
+}
+
+body.dark-mode .hook-details summary {
+    color: #aaa1ff;
+}
+
+body.dark-mode .hook-answer {
+    color: #ff8272;
+}
+
+
+/* Quote */
+
+.final-message {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+body.dark-mode .quote {
+    background: rgba(255, 255, 255, 0.05);
+    color: #d2d5dc;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .quote .author {
+    color: #aaa1ff;
+}
+
+
+/* Buttons */
+
+body.dark-mode .dark-button {
+    background: rgba(30, 33, 44, 0.9);
+    color: #f4f4f4;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .back-button {
+    background: #f0f0f0;
+    color: #17191f;
+}
+
+
+/* Footer */
+
+body.dark-mode .timeline-footer {
+    color: #9ca1ad;
+    border-top-color: #303440;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .intro-title-wrapper {
+        padding-top: 6rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .timeline {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Move timeline line to the left */
+
+    .timeline::before {
+        left: 20px;
+        transform: none;
+    }
+
+    /* Make all cards full width */
+
+    .timeline-event,
+    .timeline-event.left,
+    .timeline-event.right {
+        width: calc(100% - 40px);
+
+        margin-left: 40px;
+        margin-right: 0;
+
+        align-self: auto;
+    }
+
+    /* Move all dots to left timeline */
+
+    .timeline-event.left::before,
+    .timeline-event.right::before {
+        left: -31px;
+        right: auto;
+    }
+
+    .timeline-event {
+        margin-bottom: 3rem;
+        padding: 1.35rem;
+    }
+
+    .event-gif {
+        max-width: 70%;
+    }
+
+    .quote {
+        padding: 1.5rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .intro-title-wrapper {
+        padding-top: 5.5rem;
+    }
+
+    .intro-title-wrapper::before {
+        font-size: 0.65rem;
+        letter-spacing: 0.15rem;
+    }
+
+    .event-title {
+        font-size: 1.25rem;
+    }
+
+    .timeline-event p {
+        font-size: 0.95rem;
+    }
+
+    .event-gif {
+        max-width: 85%;
+    }
+
+    .closing-hook {
+        padding: 1.5rem;
+    }
 }
