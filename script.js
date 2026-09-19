@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const darkModeToggle = document.getElementById("darkModeToggle");
     const backButton = document.getElementById("backToTop");
+    const hookDetails = document.querySelector(".hook-details");
 
     /*  Sets up the dark mode toggle button
         switches between light and dark themes and updates the icon (🌙 / ☀️) */
@@ -19,6 +20,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (backButton) {
         backButton.addEventListener("click", () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    /*  Sets up the "Did I quit?" interaction:
+        smoothly reveals the answer every time it is opened */
+    if (hookDetails) {
+        hookDetails.addEventListener("toggle", () => {
+            const answer = hookDetails.querySelector(".hook-answer");
+
+            if (hookDetails.open) {
+                answer.classList.remove("show-answer");
+
+                /* Forces the animation to restart every time */
+                void answer.offsetWidth;
+
+                answer.classList.add("show-answer");
+            } else {
+                answer.classList.remove("show-answer");
+            }
         });
     }
 });
